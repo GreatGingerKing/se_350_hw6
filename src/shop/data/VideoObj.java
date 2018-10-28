@@ -45,10 +45,14 @@ final class VideoObj implements Video {
     if(this==thatObject) return true;
     if(thatObject==null) return false;
     if(!(thatObject instanceof Video)) return false;
+
     Video that = (VideoObj) thatObject;
-    if(_director != that.director() ) return false;
-    if( _title != that.title() ) return false;
+    if(!(_director.equals(that.director()))) return false;
+
+    if(! _title.equals(that.title())) return false;
+
     if( _year != that.year() ) return false;
+
     return true;
   }
 

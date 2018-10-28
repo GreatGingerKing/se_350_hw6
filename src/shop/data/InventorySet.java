@@ -126,7 +126,6 @@ final class InventorySet implements Inventory {
    */
   Record checkIn(Video video) {
     RecordObj r = (RecordObj) _data.get(video);
-
     if(r==null)
       throw new IllegalArgumentException("Video not found");
     if(r.numOut()<= 0)
