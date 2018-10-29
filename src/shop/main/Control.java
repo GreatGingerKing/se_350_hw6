@@ -168,10 +168,14 @@ class Control {
           Record[] rs = new Record[10];
           int i =0;
           Iterator<Record> ir =_inventory.iterator((Record x,Record y) -> y.numOwned()-x.numOwned());
+          StringBuilder sb = new StringBuilder();
           while(ir.hasNext() && i<10){
-            _ui.displayMessage(ir.next().toString());
+            sb.append(ir.next().toString());
+            sb.append("\n");
+            //_ui.displayMessage(ir.next().toString());
             i++;
           }
+          _ui.displayMessage(sb.toString());
         }
       });
           
